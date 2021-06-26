@@ -14,6 +14,16 @@ import users from "./users-data";
  * -----------------------------
  */
 function App() {
+  const userCards = users.map((user) => {
+    return (
+      <div>
+        <h3>{user.name}</h3>
+        <p>{user.location}</p>
+        <p>{user.car}</p>
+      </div>
+    );
+  });
+
   return (
     <div className="App">
       <div className="page-deets">
@@ -22,7 +32,7 @@ function App() {
 
       {/* Iterate over imported array in userData */}
       <div className="users">
-        display data here
+        {userCards}
         {/* Display each data in array in a card */}
         {/* Each card must have a 'key' attribute */}
       </div>
